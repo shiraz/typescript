@@ -1,15 +1,26 @@
-function add(n1: number, n2: number, showResult: boolean, resultPhrase: string) {
-    const sum = n1 + n2;
-    if (showResult) {
-        console.log(`${resultPhrase}${sum}`);
-    } 
+type Combinable = number | string;
+type ConversionDescriptor = 'as-number' | 'as-text';
 
-    return sum;
+function combine(input1: Combinable, input2: Combinable, resultConversion: ConversionDescriptor) {
+    let result;
+    if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
+        result = +input1 + +input2;
+    } else {
+        result = input1.toString() + input2.toString();
+    }
+
+    return result;
 }
 
-const number1 = 5;
-const number2 = 2.8;
-const showResult = true;
-const resultPhrase = 'Result is: ';
+const combineAges = combine(30, 26, 'as-number');
+console.log(combineAges);
 
-add(number1, number2, showResult, resultPhrase);
+const combineStringAges = combine('40', '36', 'as-number');
+console.log(combineStringAges);
+
+const combineNames = combine('Wade', 'Wilson', 'as-text');
+console.log(combineNames);
+
+type User = { name: string } | string;
+let u1: User = {name: 'Max'};
+u1 = 'Michael';
