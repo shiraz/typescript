@@ -22,5 +22,5 @@ const combineNames = combine('Wade', 'Wilson', 'as-text');
 console.log(combineNames);
 
 type User = { name: string } | string;
-let u1: User = {name: 'Max'};
+let u1: User = {name: 'Wade'};
 u1 = 'Michael';
