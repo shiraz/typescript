@@ -5,3 +5,5 @@ Understanding TypeScript
 1. Access the appropriate project in the section folder, and then run the command, `npm ci`.
 2. Run the command, `npm start`.
 3. For all sections except section 15, access a browser, and go to the URL http://localhost:8080.
+
+Run `sh -c 'tsc --noEmit \"$1\" && tsx \"$1\"' --",`
