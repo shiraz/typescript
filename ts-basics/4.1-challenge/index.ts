@@ -20,6 +20,7 @@ function convertHousesToHousesWithID(houses: House[]): HouseWithID[] {
     });
   } catch (err) {
     console.error('Error occurred while converting houses to houses with id', err);
+    return [];
   }
 }
 
